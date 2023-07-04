@@ -30,6 +30,11 @@ import {Hero} from './components/Hero'
 import { PortalDemo } from './components/PortalDemo';
 import ClickCounter from './components/ClickCounter';
 import HoverCounter from './components/HoverCounter';
+import ClickCounterTwo from './components/ClickCounterTwo';
+import HoverCounterTwo from './components/HoverCounterTwo';
+import User from './components/User';
+import CounterTwo from './components/CounterTwo';
+
 function App() {
 
   return( 
@@ -80,8 +85,20 @@ function App() {
       <Hero heroName='Joker'/>
      </ErrorBoundary> */}
      {/* <PortalDemo/> */}
-     <ClickCounter/>
-     <HoverCounter/>
+     {/* <ClickCounter name='Cgg' />
+     <HoverCounter/> */}
+     {/* <ClickCounterTwo/>
+     <HoverCounterTwo/>
+     <User render={(isLoggedIn)=>isLoggedIn?'CGG':'Guest'}/> */}
+    <CounterTwo render={(count,incrementCount)=>
+      (<ClickCounterTwo count={count}
+      incrementCount={incrementCount} />)
+    } />
+    <CounterTwo render={(count,incrementCount)=>(
+      <HoverCounterTwo count={count}
+      incrementCount={incrementCount} />)
+    } />
+
    </div>
   );
   
